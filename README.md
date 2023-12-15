@@ -58,4 +58,142 @@
 - `quantity` [...]
 - `price` [...]
 - `discount` [...]
-- `
+- `note` [...]
+- `ddt` Ddt{...}
+- `product` Product{...}
+
+## DocumentType
+- `id` [...]
+- `name` [...]
+- `ddts` [...]
+
+## Fidelity
+- `id` [...]
+- `clientId` [...]
+- `number` [...]
+- `activePromo` [...]
+- `client` Client{...}
+
+## Invoice
+- `id` [...]
+- `clientId` [...]
+- `checkOut` [...]
+- `date` [...]
+- `fidelity` [...]
+- `extra` [...]
+- `discount` [...]
+- `client` Client{...}
+- `invoiceDetails` [...]
+
+## InvoiceDetail
+- `id` [...]
+- `invoiceId` [...]
+- `productId` [...]
+- `quantity` [...]
+- `price` [...]
+- `discount` [...]
+- `invoice` Invoice{...}
+- `product` Product{...}
+
+## Product
+- `id` [...]
+- `description` [...]
+- `ean` [...]
+- `codeInternal` [...]
+- `codeSeller` [...]
+- `codeProducer` [...]
+- `price` [...]
+- `photoMain` [...]
+- `categoryProducts` [...]
+- `ddtDetails` [...]
+- `invoiceDetails` [...]
+- `productPhotos` [...]
+- `saleDetails` [...]
+- `suppliers` [...]
+
+## ProductPicture
+- `id` [...]
+- `fileName` [...]
+- `filePath` [...]
+- `productId` [...]
+- `product` Product{...}
+
+## Sale
+- `id` [...]
+- `clientId` [...]
+- `checkOut` [...]
+- `date` [...]
+- `fidelity` [...]
+- `extra` [...]
+- `discount` [...]
+- `client` Client{...}
+- `saleDetails` [...]
+
+## SaleDetail
+- `id` [...]
+- `saleId` [...]
+- `productId` [...]
+- `quantity` [...]
+- `price` [...]
+- `discount` [...]
+- `product` Product{...}
+- `sale` Sale{...}
+
+## Supplier
+- `id` [...]
+- `name` [...]
+- `address` [...]
+- `city` [...]
+- `cap` [...]
+- `prov` [...]
+- `pIva` [...]
+- `email` [...]
+- `emailPec` [...]
+- `phoneDefault` [...]
+- `phoneSecondary` [...]
+- `fax` [...]
+- `logo` [...]
+- `productId` [...]
+- `product` Product{...}
+- `categorySuppliers` [...]
+- `supplierContactRels` [...]
+- `supplierNotes` [...]
+- `supplierPhotos` [...]
+
+## SupplierContact
+- `id` [...]
+- `name` [...]
+- `surname` [...]
+- `email` [...]
+- `emailPec` [...]
+- `phone` [...]
+- `cell` [...]
+- `address` [...]
+- `city` [...]
+- `cap` [...]
+- `prov` [...]
+- `fiscalCode` [...]
+- `supplierContactRels` [...]
+
+## SupplierContactRel
+- `id` [...]
+- `supplierContactId` [...]
+- `supplierId` [...]
+- `supplier` Supplier{...}
+- `supplierContact` SupplierContact{...}
+
+## SupplierNote
+- `id` [...]
+- `title` [...]
+- `body` [...]
+- `createdDate` [...]
+- `allarmDate` [...]
+- `supplierId` [...]
+- `supplier` Supplier{...}
+
+## SupplierPicture
+- `id` [...]
+- `fileName` [...]
+- `filePath` [...]
+- `supplierId` [...]
+- `supplier` Supplier{...}
