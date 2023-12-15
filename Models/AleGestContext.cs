@@ -27,14 +27,14 @@ namespace AleGestDbFirst.Models
         public virtual DbSet<Invoice> Invoices { get; set; } = null!;
         public virtual DbSet<InvoiceDetail> InvoiceDetails { get; set; } = null!;
         public virtual DbSet<Product> Products { get; set; } = null!;
-        public virtual DbSet<ProductPhoto> ProductPhotos { get; set; } = null!;
+        public virtual DbSet<ProductPicture> ProductPhotos { get; set; } = null!;
         public virtual DbSet<Sale> Sales { get; set; } = null!;
         public virtual DbSet<SaleDetail> SaleDetails { get; set; } = null!;
         public virtual DbSet<Supplier> Suppliers { get; set; } = null!;
         public virtual DbSet<SupplierContact> SupplierContacts { get; set; } = null!;
         public virtual DbSet<SupplierContactRel> SupplierContactRels { get; set; } = null!;
         public virtual DbSet<SupplierNote> SupplierNotes { get; set; } = null!;
-        public virtual DbSet<SupplierPhoto> SupplierPhotos { get; set; } = null!;
+        public virtual DbSet<SupplierPicture> SupplierPhotos { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -176,7 +176,7 @@ namespace AleGestDbFirst.Models
                 entity.Property(e => e.CodeSeller).HasColumnName("Code_seller");
             });
 
-            modelBuilder.Entity<ProductPhoto>(entity =>
+            modelBuilder.Entity<ProductPicture>(entity =>
             {
                 entity.ToTable("ProductPhoto");
 
@@ -259,7 +259,7 @@ namespace AleGestDbFirst.Models
                     .HasForeignKey(d => d.SupplierId);
             });
 
-            modelBuilder.Entity<SupplierPhoto>(entity =>
+            modelBuilder.Entity<SupplierPicture>(entity =>
             {
                 entity.ToTable("SupplierPhoto");
 

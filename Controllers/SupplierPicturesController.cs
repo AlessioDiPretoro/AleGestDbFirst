@@ -11,18 +11,18 @@ namespace AleGestDbFirst.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SupplierPhotoesController : ControllerBase
+    public class SupplierPicturesController : ControllerBase
     {
         private readonly AleGestContext _context;
 
-        public SupplierPhotoesController(AleGestContext context)
+        public SupplierPicturesController(AleGestContext context)
         {
             _context = context;
         }
 
         // GET: api/SupplierPhotoes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<SupplierPhoto>>> GetSupplierPhotos()
+        public async Task<ActionResult<IEnumerable<SupplierPicture>>> GetSupplierPhotos()
         {
           if (_context.SupplierPhotos == null)
           {
@@ -33,7 +33,7 @@ namespace AleGestDbFirst.Controllers
 
         // GET: api/SupplierPhotoes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<SupplierPhoto>> GetSupplierPhoto(int id)
+        public async Task<ActionResult<SupplierPicture>> GetSupplierPhoto(int id)
         {
           if (_context.SupplierPhotos == null)
           {
@@ -52,7 +52,7 @@ namespace AleGestDbFirst.Controllers
         // PUT: api/SupplierPhotoes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutSupplierPhoto(int id, SupplierPhoto supplierPhoto)
+        public async Task<IActionResult> PutSupplierPhoto(int id, SupplierPicture supplierPhoto)
         {
             if (id != supplierPhoto.Id)
             {
@@ -83,7 +83,7 @@ namespace AleGestDbFirst.Controllers
         // POST: api/SupplierPhotoes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<SupplierPhoto>> PostSupplierPhoto(SupplierPhoto supplierPhoto)
+        public async Task<ActionResult<SupplierPicture>> PostSupplierPhoto(SupplierPicture supplierPhoto)
         {
           if (_context.SupplierPhotos == null)
           {

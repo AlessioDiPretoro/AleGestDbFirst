@@ -11,18 +11,18 @@ namespace AleGestDbFirst.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductPhotoesController : ControllerBase
+    public class ProductPicturesController : ControllerBase
     {
         private readonly AleGestContext _context;
 
-        public ProductPhotoesController(AleGestContext context)
+        public ProductPicturesController(AleGestContext context)
         {
             _context = context;
         }
 
         // GET: api/ProductPhotoes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductPhoto>>> GetProductPhotos()
+        public async Task<ActionResult<IEnumerable<ProductPicture>>> GetProductPhotos()
         {
           if (_context.ProductPhotos == null)
           {
@@ -33,7 +33,7 @@ namespace AleGestDbFirst.Controllers
 
         // GET: api/ProductPhotoes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<ProductPhoto>> GetProductPhoto(int id)
+        public async Task<ActionResult<ProductPicture>> GetProductPhoto(int id)
         {
           if (_context.ProductPhotos == null)
           {
@@ -52,7 +52,7 @@ namespace AleGestDbFirst.Controllers
         // PUT: api/ProductPhotoes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProductPhoto(int id, ProductPhoto productPhoto)
+        public async Task<IActionResult> PutProductPhoto(int id, ProductPicture productPhoto)
         {
             if (id != productPhoto.Id)
             {
@@ -83,7 +83,7 @@ namespace AleGestDbFirst.Controllers
         // POST: api/ProductPhotoes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<ProductPhoto>> PostProductPhoto(ProductPhoto productPhoto)
+        public async Task<ActionResult<ProductPicture>> PostProductPhoto(ProductPicture productPhoto)
         {
           if (_context.ProductPhotos == null)
           {
