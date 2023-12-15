@@ -43,6 +43,10 @@ namespace AleGestDbFirst.Models
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Server=.\\SQLExpress;Database=AleGest;Trusted_Connection=true;");
             }
+            //if (!optionsBuilder.IsConfigured)
+            //{
+            //    optionsBuilder.UseSqlServer("workstation id=AleGest.mssql.somee.com;packet size=4096;user id=dipretoroalessio_SQLLogin_1;pwd=xg8anybg1s;data source=AleGest.mssql.somee.com;persist security info=False;initial catalog=AleGest");
+            //}
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
