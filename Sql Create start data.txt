@@ -1,0 +1,40 @@
+insert into Category Values ('Led Panels','Nice Led panels')
+insert into Category Values ('Pin cables','Nice Pin cables')
+insert into Category Values ('Power supplies','Nice Power supplies')
+insert into Category Values ('Microcontroller','China Microcontroller')
+
+insert into Client Values ('Ale','Dp','mail@mail.com','mail@pec.com','066 6666','340 4546666','Via casa mia n°6','Toxycity','66666','SA','DWS548WSD698S','012354','True')
+insert into Client Values ('Cess','Tropp','cess@mail.com','cess@pec.com','066 1111','399 4546666','Via Foldissimo n°251','JustDo','48715','BU','ASD4DF654SADF','54541','False')
+
+insert into Product Values ('Led panel 30','123456','BOH','ASD','','19','pictureLed')
+insert into Product Values ('ESP32 China','54687','ESP32','ESP32','ESP32','3.2','EspPic')
+insert into Product Values ('Power suppli 5V','45044','5V','5V','5V','5','PW5V')
+
+insert into Supplier Values ('AliExpress','web','China','01546','CH','00016','ali@mail.com','alipec@pec.com','012','122','3334','img')
+insert into Supplier Values ('Amazon','web','America','65465','CH','00016','ama@mail.com','ampec@pec.com','01212','2134','42134','img')
+
+insert into DocumentType Values ('Acquisto - Ddt')
+insert into DocumentType Values ('Uscita - Ddt')
+insert into DocumentType Values ('Movimentazione interna')
+
+insert into Fidelity Values ('1','20000001','False')
+insert into Fidelity Values ('2','20000002','False')
+
+insert into CategoryProduct Values ('1','1')
+insert into CategoryProduct Values ('4','2')
+
+insert into CategorySupplier Values ('1','1')
+insert into CategorySupplier Values ('1','2')
+insert into CategorySupplier Values ('2','1')
+insert into CategorySupplier Values ('2','2')
+insert into CategorySupplier Values ('4','1')
+
+insert into SupplierContact Values ('Chiao','Minhgg','mail@chin.ch','pec@chin.ch','1234','65456','via boh','tokyio','4556','TK','CHASF45SA')
+insert into SupplierContact Values ('SuperVenditore','Onnipotente','','','','','','','','','')
+
+insert into SupplierContactRel Values ('1','1')
+insert into SupplierContactRel Values ('2','1')
+insert into SupplierContactRel Values ('2','2')
+
+insert into SupplierNote Values ('Cheap','its super cheap','2023-12-16 10:00:00.0000000','','1')
+insert into SupplierNote Values ('Fast','its super fast','2023-12-16 11:30:00.0000000','','2')
