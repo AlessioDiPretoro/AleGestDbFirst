@@ -8,6 +8,7 @@ namespace AleGestDbFirst.Models
         public Supplier()
         {
             CategorySuppliers = new HashSet<CategorySupplier>();
+            ProductSuppliers = new HashSet<ProductSupplier>();
             SupplierContactRels = new HashSet<SupplierContactRel>();
             SupplierNotes = new HashSet<SupplierNote>();
             SupplierPictures = new HashSet<SupplierPicture>();
@@ -28,8 +29,8 @@ namespace AleGestDbFirst.Models
         public string? Logo { get; set; }
         public int? ProductId { get; set; }
 
-        public virtual Product? Product { get; set; }
         public virtual ICollection<CategorySupplier> CategorySuppliers { get; set; }
+        public virtual ICollection<ProductSupplier> ProductSuppliers { get; set; }
         public virtual ICollection<SupplierContactRel> SupplierContactRels { get; set; }
         public virtual ICollection<SupplierNote> SupplierNotes { get; set; }
         public virtual ICollection<SupplierPicture> SupplierPictures { get; set; }

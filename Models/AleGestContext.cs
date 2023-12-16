@@ -28,6 +28,7 @@ namespace AleGestDbFirst.Models
         public virtual DbSet<InvoiceDetail> InvoiceDetails { get; set; } = null!;
         public virtual DbSet<Product> Products { get; set; } = null!;
         public virtual DbSet<ProductPicture> ProductPictures { get; set; } = null!;
+        public virtual DbSet<ProductSupplier> ProductSuppliers { get; set; } = null!;
         public virtual DbSet<Sale> Sales { get; set; } = null!;
         public virtual DbSet<SaleDetail> SaleDetails { get; set; } = null!;
         public virtual DbSet<Supplier> Suppliers { get; set; } = null!;
@@ -43,10 +44,6 @@ namespace AleGestDbFirst.Models
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Server=.\\SQLExpress;Database=AleGest;Trusted_Connection=true;");
             }
-            //if (!optionsBuilder.IsConfigured)
-            //{
-            //    optionsBuilder.UseSqlServer("workstation id=AleGest.mssql.somee.com;packet size=4096;user id=dipretoroalessio_SQLLogin_1;pwd=xg8anybg1s;data source=AleGest.mssql.somee.com;persist security info=False;initial catalog=AleGest");
-            //}
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -187,6 +184,23 @@ namespace AleGestDbFirst.Models
                     .HasForeignKey(d => d.ProductId);
             });
 
+            modelBuilder.Entity<ProductSupplier>(entity =>
+            {
+                entity.ToTable("ProductSupplier");
+
+                entity.HasOne(d => d.Product)
+                    .WithMany(p => p.ProductSuppliers)
+                    .HasForeignKey(d => d.ProductId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ProductSupplier_Product");
+
+                entity.HasOne(d => d.Supplier)
+                    .WithMany(p => p.ProductSuppliers)
+                    .HasForeignKey(d => d.SupplierId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ProductSupplier_Supplier");
+            });
+
             modelBuilder.Entity<Sale>(entity =>
             {
                 entity.ToTable("Sale");
@@ -220,10 +234,6 @@ namespace AleGestDbFirst.Models
                 entity.HasIndex(e => e.ProductId, "IX_Supplier_ProductId");
 
                 entity.Property(e => e.PIva).HasColumnName("P_Iva");
-
-                entity.HasOne(d => d.Product)
-                    .WithMany(p => p.Suppliers)
-                    .HasForeignKey(d => d.ProductId);
             });
 
             modelBuilder.Entity<SupplierContact>(entity =>
