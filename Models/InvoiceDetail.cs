@@ -10,7 +10,7 @@ namespace AleGestDbFirst.Models
         public int ProductId { get; set; }
         public double Quantity { get; set; }
         public double Price { get; set; }
-        public int Discount { get; set; }
+        public int? Discount { get; set; }
 
         public virtual Invoice Invoice { get; set; } = null!;
         public virtual Product Product { get; set; } = null!;

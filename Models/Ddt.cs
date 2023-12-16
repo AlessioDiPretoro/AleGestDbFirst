@@ -13,10 +13,10 @@ namespace AleGestDbFirst.Models
         public int Id { get; set; }
         public int DocumentTypeId { get; set; }
         public int SupplierId { get; set; }
-        public DateTime Date { get; set; }
-        public string Number { get; set; } = null!;
-        public string Note { get; set; } = null!;
-        public int Discount { get; set; }
+        public DateTime? Date { get; set; }
+        public string? Number { get; set; }
+        public string? Note { get; set; }
+        public int? Discount { get; set; }
 
         public virtual DocumentType DocumentType { get; set; } = null!;
         public virtual ICollection<DdtDetail> DdtDetails { get; set; }

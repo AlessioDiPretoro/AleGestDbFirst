@@ -4,6 +4,7 @@ using AleGestDbFirst.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AleGestDbFirst.Migrations
 {
     [DbContext(typeof(AleGestContext))]
-    partial class AleGestContextModelSnapshot : ModelSnapshot
+    [Migration("20231216103839_Cat")]
+    partial class Cat
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -97,27 +99,34 @@ namespace AleGestDbFirst.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Cap")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Cell")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("City")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EmailPec")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FiscalCode")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("IsPrivate")
+                    b.Property<bool>("IsPrivate")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
@@ -125,16 +134,20 @@ namespace AleGestDbFirst.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PIva")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("P_Iva");
 
                     b.Property<string>("Phone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Prov")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Surname")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -150,19 +163,21 @@ namespace AleGestDbFirst.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime?>("Date")
+                    b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("Discount")
+                    b.Property<int>("Discount")
                         .HasColumnType("int");
 
                     b.Property<int>("DocumentTypeId")
                         .HasColumnType("int");
 
                     b.Property<string>("Note")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Number")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SupplierId")
@@ -186,10 +201,11 @@ namespace AleGestDbFirst.Migrations
                     b.Property<int>("DdtId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Discount")
+                    b.Property<int>("Discount")
                         .HasColumnType("int");
 
                     b.Property<string>("Note")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Price")
@@ -235,7 +251,7 @@ namespace AleGestDbFirst.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<bool?>("ActivePromo")
+                    b.Property<bool>("ActivePromo")
                         .HasColumnType("bit");
 
                     b.Property<int>("ClientId")
@@ -261,6 +277,7 @@ namespace AleGestDbFirst.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("CheckOut")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ClientId")
@@ -269,13 +286,15 @@ namespace AleGestDbFirst.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("Discount")
+                    b.Property<int>("Discount")
                         .HasColumnType("int");
 
                     b.Property<string>("Extra")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Fidelity")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -293,7 +312,7 @@ namespace AleGestDbFirst.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("Discount")
+                    b.Property<int>("Discount")
                         .HasColumnType("int");
 
                     b.Property<int>("InvoiceId")
@@ -326,14 +345,17 @@ namespace AleGestDbFirst.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("CodeInternal")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Code_internal");
 
                     b.Property<string>("CodeProducer")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Code_producer");
 
                     b.Property<string>("CodeSeller")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Code_seller");
 
@@ -342,12 +364,14 @@ namespace AleGestDbFirst.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Ean")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhotoMain")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double?>("Price")
+                    b.Property<double>("Price")
                         .HasColumnType("float");
 
                     b.HasKey("Id");
@@ -390,21 +414,24 @@ namespace AleGestDbFirst.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("CheckOut")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ClientId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("Date")
+                    b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("Discount")
+                    b.Property<int>("Discount")
                         .HasColumnType("int");
 
                     b.Property<string>("Extra")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Fidelity")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -422,7 +449,7 @@ namespace AleGestDbFirst.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("Discount")
+                    b.Property<int>("Discount")
                         .HasColumnType("int");
 
                     b.Property<double>("Price")
@@ -455,24 +482,31 @@ namespace AleGestDbFirst.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Cap")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("City")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EmailPec")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Fax")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Logo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -480,19 +514,23 @@ namespace AleGestDbFirst.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PIva")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("P_Iva");
 
                     b.Property<string>("PhoneDefault")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneSecondary")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<string>("Prov")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -511,24 +549,31 @@ namespace AleGestDbFirst.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Cap")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Cell")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("City")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EmailPec")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FiscalCode")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -536,12 +581,15 @@ namespace AleGestDbFirst.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Prov")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Surname")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -580,13 +628,14 @@ namespace AleGestDbFirst.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime?>("AllarmDate")
+                    b.Property<DateTime>("AllarmDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Body")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CreatedDate")
+                    b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("SupplierId")

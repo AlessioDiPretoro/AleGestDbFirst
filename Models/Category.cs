@@ -13,7 +13,7 @@ namespace AleGestDbFirst.Models
 
         public int Id { get; set; }
         public string Name { get; set; } = null!;
-        public string Description { get; set; } = null!;
+        public string? Description { get; set; }
 
         public virtual ICollection<CategoryProduct> CategoryProducts { get; set; }
         public virtual ICollection<CategorySupplier> CategorySuppliers { get; set; }

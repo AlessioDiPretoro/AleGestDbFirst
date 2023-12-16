@@ -4,6 +4,7 @@ using AleGestDbFirst.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AleGestDbFirst.Migrations
 {
     [DbContext(typeof(AleGestContext))]
-    partial class AleGestContextModelSnapshot : ModelSnapshot
+    [Migration("20231216110601_SaleSaleDet")]
+    partial class SaleSaleDet
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -326,14 +328,17 @@ namespace AleGestDbFirst.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("CodeInternal")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Code_internal");
 
                     b.Property<string>("CodeProducer")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Code_producer");
 
                     b.Property<string>("CodeSeller")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Code_seller");
 
@@ -342,12 +347,14 @@ namespace AleGestDbFirst.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Ean")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhotoMain")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double?>("Price")
+                    b.Property<double>("Price")
                         .HasColumnType("float");
 
                     b.HasKey("Id");

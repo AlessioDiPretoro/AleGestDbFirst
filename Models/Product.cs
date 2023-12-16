@@ -17,12 +17,12 @@ namespace AleGestDbFirst.Models
 
         public int Id { get; set; }
         public string Description { get; set; } = null!;
-        public string Ean { get; set; } = null!;
-        public string CodeInternal { get; set; } = null!;
-        public string CodeSeller { get; set; } = null!;
-        public string CodeProducer { get; set; } = null!;
-        public double Price { get; set; }
-        public string PhotoMain { get; set; } = null!;
+        public string? Ean { get; set; }
+        public string? CodeInternal { get; set; }
+        public string? CodeSeller { get; set; }
+        public string? CodeProducer { get; set; }
+        public double? Price { get; set; }
+        public string? PhotoMain { get; set; }
 
         public virtual ICollection<CategoryProduct> CategoryProducts { get; set; }
         public virtual ICollection<DdtDetail> DdtDetails { get; set; }
