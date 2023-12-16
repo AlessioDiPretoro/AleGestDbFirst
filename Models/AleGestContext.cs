@@ -231,8 +231,6 @@ namespace AleGestDbFirst.Models
             {
                 entity.ToTable("Supplier");
 
-                entity.HasIndex(e => e.ProductId, "IX_Supplier_ProductId");
-
                 entity.Property(e => e.PIva).HasColumnName("P_Iva");
             });
 

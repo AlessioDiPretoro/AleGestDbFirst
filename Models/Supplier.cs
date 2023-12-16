@@ -27,7 +27,6 @@ namespace AleGestDbFirst.Models
         public string? PhoneSecondary { get; set; }
         public string? Fax { get; set; }
         public string? Logo { get; set; }
-        public int? ProductId { get; set; }
 
         public virtual ICollection<CategorySupplier> CategorySuppliers { get; set; }
         public virtual ICollection<ProductSupplier> ProductSuppliers { get; set; }
