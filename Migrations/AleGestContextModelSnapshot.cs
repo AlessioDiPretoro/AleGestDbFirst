@@ -344,7 +344,7 @@ namespace AleGestDbFirst.Migrations
                     b.Property<string>("Ean")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PhotoMain")
+                    b.Property<string>("PictureMain")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double?>("Price")
@@ -376,9 +376,9 @@ namespace AleGestDbFirst.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "ProductId" }, "IX_ProductPhoto_ProductId");
+                    b.HasIndex(new[] { "ProductId" }, "IX_ProductPicture_ProductId");
 
-                    b.ToTable("ProductPhoto", (string)null);
+                    b.ToTable("ProductPicture", (string)null);
                 });
 
             modelBuilder.Entity("AleGestDbFirst.Models.Sale", b =>
@@ -624,9 +624,9 @@ namespace AleGestDbFirst.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "SupplierId" }, "IX_SupplierPhoto_SupplierId");
+                    b.HasIndex(new[] { "SupplierId" }, "IX_SupplierPicture_SupplierId");
 
-                    b.ToTable("SupplierPhoto", (string)null);
+                    b.ToTable("SupplierPicture", (string)null);
                 });
 
             modelBuilder.Entity("AleGestDbFirst.Models.CategoryProduct", b =>
@@ -741,7 +741,7 @@ namespace AleGestDbFirst.Migrations
             modelBuilder.Entity("AleGestDbFirst.Models.ProductPicture", b =>
                 {
                     b.HasOne("AleGestDbFirst.Models.Product", "Product")
-                        .WithMany("ProductPhotos")
+                        .WithMany("ProductPictures")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -821,7 +821,7 @@ namespace AleGestDbFirst.Migrations
             modelBuilder.Entity("AleGestDbFirst.Models.SupplierPicture", b =>
                 {
                     b.HasOne("AleGestDbFirst.Models.Supplier", "Supplier")
-                        .WithMany("SupplierPhotos")
+                        .WithMany("SupplierPictures")
                         .HasForeignKey("SupplierId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -868,7 +868,7 @@ namespace AleGestDbFirst.Migrations
 
                     b.Navigation("InvoiceDetails");
 
-                    b.Navigation("ProductPhotos");
+                    b.Navigation("ProductPictures");
 
                     b.Navigation("SaleDetails");
 
@@ -888,7 +888,7 @@ namespace AleGestDbFirst.Migrations
 
                     b.Navigation("SupplierNotes");
 
-                    b.Navigation("SupplierPhotos");
+                    b.Navigation("SupplierPictures");
                 });
 
             modelBuilder.Entity("AleGestDbFirst.Models.SupplierContact", b =>

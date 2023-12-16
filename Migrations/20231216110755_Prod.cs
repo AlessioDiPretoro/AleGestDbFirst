@@ -17,7 +17,7 @@ namespace AleGestDbFirst.Migrations
                 oldType: "float");
 
             migrationBuilder.AlterColumn<string>(
-                name: "PhotoMain",
+                name: "PictureMain",
                 table: "Product",
                 type: "nvarchar(max)",
                 nullable: true,
@@ -70,7 +70,7 @@ namespace AleGestDbFirst.Migrations
                 oldNullable: true);
 
             migrationBuilder.AlterColumn<string>(
-                name: "PhotoMain",
+                name: "PictureMain",
                 table: "Product",
                 type: "nvarchar(max)",
                 nullable: false,

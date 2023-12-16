@@ -10,7 +10,7 @@ namespace AleGestDbFirst.Models
             CategoryProducts = new HashSet<CategoryProduct>();
             DdtDetails = new HashSet<DdtDetail>();
             InvoiceDetails = new HashSet<InvoiceDetail>();
-            ProductPhotos = new HashSet<ProductPicture>();
+            ProductPictures = new HashSet<ProductPicture>();
             SaleDetails = new HashSet<SaleDetail>();
             Suppliers = new HashSet<Supplier>();
         }
@@ -22,12 +22,12 @@ namespace AleGestDbFirst.Models
         public string? CodeSeller { get; set; }
         public string? CodeProducer { get; set; }
         public double? Price { get; set; }
-        public string? PhotoMain { get; set; }
+        public string? PictureMain { get; set; }
 
         public virtual ICollection<CategoryProduct> CategoryProducts { get; set; }
         public virtual ICollection<DdtDetail> DdtDetails { get; set; }
         public virtual ICollection<InvoiceDetail> InvoiceDetails { get; set; }
-        public virtual ICollection<ProductPicture> ProductPhotos { get; set; }
+        public virtual ICollection<ProductPicture> ProductPictures { get; set; }
         public virtual ICollection<SaleDetail> SaleDetails { get; set; }
         public virtual ICollection<Supplier> Suppliers { get; set; }
     }

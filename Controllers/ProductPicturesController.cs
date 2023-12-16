@@ -20,46 +20,46 @@ namespace AleGestDbFirst.Controllers
             _context = context;
         }
 
-        // GET: api/ProductPhotoes
+        // GET: api/ProductPicturees
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductPicture>>> GetProductPhotos()
+        public async Task<ActionResult<IEnumerable<ProductPicture>>> GetProductPictures()
         {
-          if (_context.ProductPhotos == null)
+          if (_context.ProductPictures == null)
           {
               return NotFound();
           }
-            return await _context.ProductPhotos.ToListAsync();
+            return await _context.ProductPictures.ToListAsync();
         }
 
-        // GET: api/ProductPhotoes/5
+        // GET: api/ProductPicturees/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<ProductPicture>> GetProductPhoto(int id)
+        public async Task<ActionResult<ProductPicture>> GetProductPicture(int id)
         {
-          if (_context.ProductPhotos == null)
+          if (_context.ProductPictures == null)
           {
               return NotFound();
           }
-            var productPhoto = await _context.ProductPhotos.FindAsync(id);
+            var productPicture = await _context.ProductPictures.FindAsync(id);
 
-            if (productPhoto == null)
+            if (productPicture == null)
             {
                 return NotFound();
             }
 
-            return productPhoto;
+            return productPicture;
         }
 
-        // PUT: api/ProductPhotoes/5
+        // PUT: api/ProductPicturees/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProductPhoto(int id, ProductPicture productPhoto)
+        public async Task<IActionResult> PutProductPicture(int id, ProductPicture productPicture)
         {
-            if (id != productPhoto.Id)
+            if (id != productPicture.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(productPhoto).State = EntityState.Modified;
+            _context.Entry(productPicture).State = EntityState.Modified;
 
             try
             {
@@ -67,7 +67,7 @@ namespace AleGestDbFirst.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProductPhotoExists(id))
+                if (!ProductPictureExists(id))
                 {
                     return NotFound();
                 }
@@ -80,44 +80,44 @@ namespace AleGestDbFirst.Controllers
             return NoContent();
         }
 
-        // POST: api/ProductPhotoes
+        // POST: api/ProductPicturees
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<ProductPicture>> PostProductPhoto(ProductPicture productPhoto)
+        public async Task<ActionResult<ProductPicture>> PostProductPicture(ProductPicture productPicture)
         {
-          if (_context.ProductPhotos == null)
+          if (_context.ProductPictures == null)
           {
-              return Problem("Entity set 'AleGestContext.ProductPhotos'  is null.");
+              return Problem("Entity set 'AleGestContext.ProductPictures'  is null.");
           }
-            _context.ProductPhotos.Add(productPhoto);
+            _context.ProductPictures.Add(productPicture);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProductPhoto", new { id = productPhoto.Id }, productPhoto);
+            return CreatedAtAction("GetProductPicture", new { id = productPicture.Id }, productPicture);
         }
 
-        // DELETE: api/ProductPhotoes/5
+        // DELETE: api/ProductPicturees/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProductPhoto(int id)
+        public async Task<IActionResult> DeleteProductPicture(int id)
         {
-            if (_context.ProductPhotos == null)
+            if (_context.ProductPictures == null)
             {
                 return NotFound();
             }
-            var productPhoto = await _context.ProductPhotos.FindAsync(id);
-            if (productPhoto == null)
+            var productPicture = await _context.ProductPictures.FindAsync(id);
+            if (productPicture == null)
             {
                 return NotFound();
             }
 
-            _context.ProductPhotos.Remove(productPhoto);
+            _context.ProductPictures.Remove(productPicture);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool ProductPhotoExists(int id)
+        private bool ProductPictureExists(int id)
         {
-            return (_context.ProductPhotos?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.ProductPictures?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

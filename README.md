@@ -103,11 +103,11 @@
 - `codeSeller` [...]
 - `codeProducer` [...]
 - `price` [...]
-- `photoMain` [...]
+- `PictureMain` [...]
 - `categoryProducts` [...]
 - `ddtDetails` [...]
 - `invoiceDetails` [...]
-- `productPhotos` [...]
+- `productPictures` [...]
 - `saleDetails` [...]
 - `suppliers` [...]
 
@@ -158,7 +158,7 @@
 - `categorySuppliers` [...]
 - `supplierContactRels` [...]
 - `supplierNotes` [...]
-- `supplierPhotos` [...]
+- `supplierPictures` [...]
 
 ## SupplierContact
 - `id` [...]

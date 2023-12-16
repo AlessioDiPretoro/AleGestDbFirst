@@ -73,7 +73,7 @@ namespace AleGestDbFirst.Migrations
                     Code_seller = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Code_producer = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<double>(type: "float", nullable: false),
-                    PhotoMain = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    PictureMain = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -223,7 +223,7 @@ namespace AleGestDbFirst.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProductPhoto",
+                name: "ProductPicture",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -234,9 +234,9 @@ namespace AleGestDbFirst.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductPhoto", x => x.Id);
+                    table.PrimaryKey("PK_ProductPicture", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ProductPhoto_Product_ProductId",
+                        name: "FK_ProductPicture_Product_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Product",
                         principalColumn: "Id",
@@ -437,7 +437,7 @@ namespace AleGestDbFirst.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SupplierPhoto",
+                name: "SupplierPicture",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -448,9 +448,9 @@ namespace AleGestDbFirst.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SupplierPhoto", x => x.Id);
+                    table.PrimaryKey("PK_SupplierPicture", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SupplierPhoto_Supplier_SupplierId",
+                        name: "FK_SupplierPicture_Supplier_SupplierId",
                         column: x => x.SupplierId,
                         principalTable: "Supplier",
                         principalColumn: "Id",
@@ -513,8 +513,8 @@ namespace AleGestDbFirst.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductPhoto_ProductId",
-                table: "ProductPhoto",
+                name: "IX_ProductPicture_ProductId",
+                table: "ProductPicture",
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
@@ -553,8 +553,8 @@ namespace AleGestDbFirst.Migrations
                 column: "SupplierId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SupplierPhoto_SupplierId",
-                table: "SupplierPhoto",
+                name: "IX_SupplierPicture_SupplierId",
+                table: "SupplierPicture",
                 column: "SupplierId");
         }
 
@@ -576,7 +576,7 @@ namespace AleGestDbFirst.Migrations
                 name: "InvoiceDetails");
 
             migrationBuilder.DropTable(
-                name: "ProductPhoto");
+                name: "ProductPicture");
 
             migrationBuilder.DropTable(
                 name: "SaleDetails");
@@ -588,7 +588,7 @@ namespace AleGestDbFirst.Migrations
                 name: "SupplierNote");
 
             migrationBuilder.DropTable(
-                name: "SupplierPhoto");
+                name: "SupplierPicture");
 
             migrationBuilder.DropTable(
                 name: "Category");

@@ -20,46 +20,46 @@ namespace AleGestDbFirst.Controllers
             _context = context;
         }
 
-        // GET: api/SupplierPhotoes
+        // GET: api/SupplierPicturees
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<SupplierPicture>>> GetSupplierPhotos()
+        public async Task<ActionResult<IEnumerable<SupplierPicture>>> GetSupplierPictures()
         {
-          if (_context.SupplierPhotos == null)
+          if (_context.SupplierPictures == null)
           {
               return NotFound();
           }
-            return await _context.SupplierPhotos.ToListAsync();
+            return await _context.SupplierPictures.ToListAsync();
         }
 
-        // GET: api/SupplierPhotoes/5
+        // GET: api/SupplierPicturees/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<SupplierPicture>> GetSupplierPhoto(int id)
+        public async Task<ActionResult<SupplierPicture>> GetSupplierPicture(int id)
         {
-          if (_context.SupplierPhotos == null)
+          if (_context.SupplierPictures == null)
           {
               return NotFound();
           }
-            var supplierPhoto = await _context.SupplierPhotos.FindAsync(id);
+            var supplierPicture = await _context.SupplierPictures.FindAsync(id);
 
-            if (supplierPhoto == null)
+            if (supplierPicture == null)
             {
                 return NotFound();
             }
 
-            return supplierPhoto;
+            return supplierPicture;
         }
 
-        // PUT: api/SupplierPhotoes/5
+        // PUT: api/SupplierPicturees/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutSupplierPhoto(int id, SupplierPicture supplierPhoto)
+        public async Task<IActionResult> PutSupplierPicture(int id, SupplierPicture supplierPicture)
         {
-            if (id != supplierPhoto.Id)
+            if (id != supplierPicture.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(supplierPhoto).State = EntityState.Modified;
+            _context.Entry(supplierPicture).State = EntityState.Modified;
 
             try
             {
@@ -67,7 +67,7 @@ namespace AleGestDbFirst.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SupplierPhotoExists(id))
+                if (!SupplierPictureExists(id))
                 {
                     return NotFound();
                 }
@@ -80,44 +80,44 @@ namespace AleGestDbFirst.Controllers
             return NoContent();
         }
 
-        // POST: api/SupplierPhotoes
+        // POST: api/SupplierPicturees
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<SupplierPicture>> PostSupplierPhoto(SupplierPicture supplierPhoto)
+        public async Task<ActionResult<SupplierPicture>> PostSupplierPicture(SupplierPicture supplierPicture)
         {
-          if (_context.SupplierPhotos == null)
+          if (_context.SupplierPictures == null)
           {
-              return Problem("Entity set 'AleGestContext.SupplierPhotos'  is null.");
+              return Problem("Entity set 'AleGestContext.SupplierPictures'  is null.");
           }
-            _context.SupplierPhotos.Add(supplierPhoto);
+            _context.SupplierPictures.Add(supplierPicture);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetSupplierPhoto", new { id = supplierPhoto.Id }, supplierPhoto);
+            return CreatedAtAction("GetSupplierPicture", new { id = supplierPicture.Id }, supplierPicture);
         }
 
-        // DELETE: api/SupplierPhotoes/5
+        // DELETE: api/SupplierPicturees/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteSupplierPhoto(int id)
+        public async Task<IActionResult> DeleteSupplierPicture(int id)
         {
-            if (_context.SupplierPhotos == null)
+            if (_context.SupplierPictures == null)
             {
                 return NotFound();
             }
-            var supplierPhoto = await _context.SupplierPhotos.FindAsync(id);
-            if (supplierPhoto == null)
+            var supplierPicture = await _context.SupplierPictures.FindAsync(id);
+            if (supplierPicture == null)
             {
                 return NotFound();
             }
 
-            _context.SupplierPhotos.Remove(supplierPhoto);
+            _context.SupplierPictures.Remove(supplierPicture);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool SupplierPhotoExists(int id)
+        private bool SupplierPictureExists(int id)
         {
-            return (_context.SupplierPhotos?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.SupplierPictures?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

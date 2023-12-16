@@ -27,14 +27,14 @@ namespace AleGestDbFirst.Models
         public virtual DbSet<Invoice> Invoices { get; set; } = null!;
         public virtual DbSet<InvoiceDetail> InvoiceDetails { get; set; } = null!;
         public virtual DbSet<Product> Products { get; set; } = null!;
-        public virtual DbSet<ProductPicture> ProductPhotos { get; set; } = null!;
+        public virtual DbSet<ProductPicture> ProductPictures { get; set; } = null!;
         public virtual DbSet<Sale> Sales { get; set; } = null!;
         public virtual DbSet<SaleDetail> SaleDetails { get; set; } = null!;
         public virtual DbSet<Supplier> Suppliers { get; set; } = null!;
         public virtual DbSet<SupplierContact> SupplierContacts { get; set; } = null!;
         public virtual DbSet<SupplierContactRel> SupplierContactRels { get; set; } = null!;
         public virtual DbSet<SupplierNote> SupplierNotes { get; set; } = null!;
-        public virtual DbSet<SupplierPicture> SupplierPhotos { get; set; } = null!;
+        public virtual DbSet<SupplierPicture> SupplierPictures { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -178,12 +178,12 @@ namespace AleGestDbFirst.Models
 
             modelBuilder.Entity<ProductPicture>(entity =>
             {
-                entity.ToTable("ProductPhoto");
+                entity.ToTable("ProductPicture");
 
-                entity.HasIndex(e => e.ProductId, "IX_ProductPhoto_ProductId");
+                entity.HasIndex(e => e.ProductId, "IX_ProductPicture_ProductId");
 
                 entity.HasOne(d => d.Product)
-                    .WithMany(p => p.ProductPhotos)
+                    .WithMany(p => p.ProductPictures)
                     .HasForeignKey(d => d.ProductId);
             });
 
@@ -261,12 +261,12 @@ namespace AleGestDbFirst.Models
 
             modelBuilder.Entity<SupplierPicture>(entity =>
             {
-                entity.ToTable("SupplierPhoto");
+                entity.ToTable("SupplierPicture");
 
-                entity.HasIndex(e => e.SupplierId, "IX_SupplierPhoto_SupplierId");
+                entity.HasIndex(e => e.SupplierId, "IX_SupplierPicture_SupplierId");
 
                 entity.HasOne(d => d.Supplier)
-                    .WithMany(p => p.SupplierPhotos)
+                    .WithMany(p => p.SupplierPictures)
                     .HasForeignKey(d => d.SupplierId);
             });
 
