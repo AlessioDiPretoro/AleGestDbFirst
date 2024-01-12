@@ -1,7 +1,9 @@
 global using AleGestDbFirst.Models;
 global using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("AleGestDbFirstContextConnection") ?? throw new InvalidOperationException("Connection string 'AleGestDbFirstContextConnection' not found.");
 
 // Add services to the container.
 builder.Services.AddControllers();
